@@ -14,12 +14,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        predictionImage.image = UIImage(named: balls.randomElement()!)
-        predictionImage.alpha = 0.5
+        changeProperties(alfa: 0.3, element: balls.randomElement()!)
     }
     
     @IBAction func askButton(_ sender: Any) {
-        predictionImage.image = UIImage(named: balls.randomElement()!)
-        predictionImage.alpha = 1
+        changeProperties(alfa: 1, element: balls.randomElement()!)
     }
+    func changeProperties(alfa:CGFloat, element:String){
+        predictionImage.image = UIImage(named:element)
+        predictionImage.alpha = alfa
+    }
+    
 }
